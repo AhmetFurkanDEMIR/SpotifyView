@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify View | {{me["display_name"]}}</title>
+    <link rel="icon" type="image/x-icon" href="{{me["images"][0]["url"]}}">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://open.spotify.com/embed-podcast/iframe-api/v1" async></script>
+
+    <style>
+
+
+                /*=============== GOOGLE FONTS ===============*/
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+        /*=============== VARIABLES CSS ===============*/
+        :root {
+        /*========== Colors ==========*/
+        /*Color mode HSL(hue, saturation, lightness)*/
+        --first-color: hsl(29, 80%, 58%);
+        --first-color-light: hsl(29, 80%, 70%);
+        --black-color: hsl(29, 16%, 10%);
+        --text-color: hsl(29, 8%, 65%);
+        --body-color: hsl(29, 100%, 99%);
+
+        /*========== Font and typography ==========*/
+        /*.5rem = 8px | 1rem = 16px ...*/
+        --body-font: "Poppins", sans-serif;
+        --h3-font-size: 1.125rem;
+        --smaller-font-size: 0.75rem;
+        }
+
+        /*=============== BASE ===============*/
+        * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        }
+
+        a {
+        text-decoration: none;
+        }
+
+        ul {
+        list-style: none;
+        }
+
+        img {
+        max-width: 100%;
+        height: auto;
+        }
+
+        /*=============== CARD ===============*/
+        .container {
+        height: 100vh;
+        margin-inline: 1.5rem;
+        display: grid;
+        place-items: center;
+        }
+
+        .card {
+        position: relative;
+
+        height: 352px;
+        background-color: #282828;
+        padding: 1.25rem 2rem 3rem;
+        border-radius: 1.5rem;
+        text-align: center;
+        box-shadow: 0 4px 16px hsla(29, 75%, 8%, 0.2);
+        }
+
+        .card__img {
+        width: 96px;
+        border-radius: 50%;
+        }
+
+        .card__border {
+        width: 110px;
+        height: 110px;
+        border: 2px solid;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        margin: 0 auto 0.75rem;
+
+        }
+
+        .card__name {
+        color: black;
+        font-size: var(--h3-font-size);
+        font-weight: 600;
+        }
+
+        .card__profession {
+        color: black;
+        font-size: var(--smaller-font-size);
+        font-weight: 500;
+        font-size:15px;
+        }
+
+        .card__social {
+        width: 200px;
+        background-color: #191414;
+        padding: 0.75rem;
+        border-radius: 3rem;
+        text-align: initial;
+        box-shadow: 0 8px 24px hsla(29, 75%, 56%, 0.3);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1.75rem;
+        margin: 0 auto;
+        overflow: hidden;
+        transform-origin: 18px 17px;
+        }
+
+        .card__social-control {
+        position: relative;
+        transform-origin: 18px 18px;
+        transition: transform 0.45s ease;
+        transform: rotate(0);
+        }
+
+        .card__social-toggle {
+        display: inline-flex;
+        background-color: white;
+        color: white;
+        font-size: 1.25rem;
+        padding: 0.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+        z-index: 10;
+        }
+
+        @keyframes up-animation {
+        0%,
+        100% {
+            transform: rotate(0);
+        }
+        50%,
+        60% {
+            transform: rotate(-3deg);
+        }
+        88% {
+            transform: rotate(1deg);
+        }
+        }
+
+        /* Down animation */
+        .card__social.down-animation {
+        animation: down-animation 1s ease-in-out forwards;
+        }
+
+        @keyframes down-animation {
+        0%,
+        100% {
+            transform: rotate(0);
+        }
+        50%,
+        60% {
+            transform: rotate(6deg);
+        }
+        0%,
+        88% {
+            transform: rotate(-1deg);
+        }
+        }
+
+
+        .wrapper {
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body style="background-color:#191414;">
+
+    <div class="wrapper">
+
+        <br></br>
+
+        <h2 style="color:white">Spotify View <i class="fa-brands fa-spotify fa-beat"></i></h2>
+
+
+            <div class="row">
+                
+              <div class="col col-lg-3 ">
+                
+                <div style="padding-top:60px; padding-left:60px; padding-right:60px;">
+                    <div class="card">
+                        <div class="card__border">
+                          <img src="{{me["images"][0]["url"]}}" alt="card image" class="card__img" />
+                        </div>
+                  
+                        <h3 style="color:white" class="card__name">{{me["display_name"]}}</h3>
+                        <span style="color:white" class="card__profession">Followers: {{me["followers"]["total"]}}</span>
+  
+                        <span style="color: #2ec27e; margin: 20px;" class="card__profession">User Active <i class="fa-solid fa-user-check fa-xs" style="color: #2ec27e;"></i></span>
+                        
+            
+                        <button class="btn btn-dark" onclick="window.location='{{me["external_urls"]["spotify"]}}';" type="button" style="margin: 45px; border-radius: 1rem;">Link <i class="fa-solid fa-link" style="color: #ffffff;"></i></button>
+
+                      </div>
+                    </div>
+
+              </div>
+              <div class="col col-lg-9">
+                <div style="padding-top:60px; padding-right:60px; padding-left:60px;">
+
+                    <div id="embed-iframe"></div>
+        
+                </div>
+              </div>
+            </div>
+
+
+        <br>
+
+        <div style="padding: 60px;">
+
+        {%for i in range(0, lenn)%}
+
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/{{playlists["items"][i]["id"]}}?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <br></br>
+
+        {%endfor%}
+
+
+    </div>
+
+    </div>
+
+    
+    <script>
+
+        window.onSpotifyIframeApiReady = (IFrameAPI) => {
+          //
+        };
+        
+        window.onSpotifyIframeApiReady = (IFrameAPI) => {
+          const element = document.getElementById('embed-iframe');
+          const options = {
+              uri: 'spotify:track:{{music_id}}'
+            };
+          const callback = (EmbedController) => {};
+          IFrameAPI.createController(element, options, callback);
+        };
+        
+    </script>
+
+</body>
+</html>
+
+</body>
+</html>

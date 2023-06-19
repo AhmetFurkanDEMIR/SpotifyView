@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify View</title>
+    <link rel="icon" href="static/img/spt.ico">
+
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      .wrapper {
+        text-align: center;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      section {
+        padding: 60px 0;
+        /* min-height: 100vh;*/
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .contact-area {
+        border-bottom: 1px solid #353c46;
+      }
+
+      .contact-content p {
+        font-size: 15px;
+        margin: 30px 0 60px;
+        position: relative;
+      }
+
+      .contact-content p::after {
+        background: #191414;
+        bottom: -30px;
+        content: "";
+        height: 1px;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%);
+        width: 80%;
+      }
+
+      .contact-content h6 {
+        color: #191414;
+        font-size: 15px;
+        font-weight: 400;
+        margin-bottom: 10px;
+      }
+
+      .contact-content span {
+        color: #191414;
+        margin: 0 10px;
+      }
+
+      .contact-social {
+        margin-top: 30px;
+      }
+
+      .contact-social > ul {
+        display: inline-flex;
+      }
+
+      .contact-social ul li a {
+        border: 1px solid #8b9199;
+        color: #8b9199;
+        display: inline-block;
+        height: 40px;
+        margin: 0 10px;
+        padding-top: 7px;
+        transition: all 0.4s ease 0s;
+        width: 40px;
+      }
+
+      .contact-social ul li a:hover {
+        border: 1px solid #fab702;
+        color: #fab702;
+      }
+
+      .contact-content img {
+        max-width: 210px;
+      }
+
+      section,
+      footer {
+        background: #191414;
+        color: #868c96;
+      }
+
+      footer p {
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      footer img {
+        width: 44px;
+      }
+    </style>
+  </head>
+  <body style="background-color: #191414">
+    <div class="wrapper">
+      <br />
+
+      <h2 style="color: white">Spotify View</h2>
+
+      <br />
+
+      <div style="padding: 30px">
+        <h5 style="color: white">
+          This app makes your Spotify profile public and presents information
+          about you.
+        </h5>
+        <h5 style="color: white">
+          Your profile, your activity status, the music you're currently
+          listening to, and the playlists you've created.
+        </h5>
+      </div>
+      <br />
+
+      <button type="button" name="myButton" id="myButton" class="btn btn-dark">
+        Login Spotify <i class="fa-brands fa-spotify fa-beat"></i>
+      </button>
+    </div>
+
+    <script type="text/javascript">
+      document.getElementById("myButton").onclick = function () {
+        location.href =
+          "https://accounts.spotify.com/authorize?response_type=code&client_id=ee43edcd46554af686d5918497df08f5&scope=user-read-currently-playing&redirect_uri=https://spotify.ahmetfurkandemir.com/login/code";
+      };
+    </script>
+
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <section class="contact-area" id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-3">
+            <div class="contact-content text-center">
+              <div class="hr"></div>
+
+              <div class="contact-social">
+                <ul>
+                  <li>
+                    <a
+                      class="hover-target"
+                      href="https://www.linkedin.com/in/1dfurkan/"
+                      ><i class="fab fa-linkedin-in"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      class="hover-target"
+                      href="https://github.com/AhmetFurkanDEMIR"
+                      ><i class="fab fa-github"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =============== 1.9 Contact Area End ====================-->
+    <!-- =============== 1.9 Footer Area Start ====================-->
+    <footer>
+      <p>Copyright &copy; 2023 Ahmet Furkan Demir All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
