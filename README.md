@@ -2,7 +2,7 @@
 
 # Spotify View
 
-This app makes your Spotify profile public and presents information about you. Your profile, your activity status, the music you're currently listening to, and the playlists you've created.
+This app makes your Spotify profile public and presents information about you. Your profile, your activity status, the music you're currently listening to, and the playlists you've created. By adding the public link created for you to your social media accounts such as Twitter and Instagram, you can enable your followers to know your music taste better.
 
 Since the application is in development mode, Spotify does not allow everyone to use the application. If you can send me your Spotify username and e-mail address, I can open it.
 
