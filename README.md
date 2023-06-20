@@ -21,3 +21,5 @@ SpotifyAPI usage is carried out as above. After the verification process was com
 [https://spotify.ahmetfurkandemir.com/user/KGZJvlGr8juUVCuheuPzFnSDPbStTZAW1TcLoSHlMKQ](https://spotify.ahmetfurkandemir.com/user/KGZJvlGr8juUVCuheuPzFnSDPbStTZAW1TcLoSHlMKQ)
 
 [https://spotify.ahmetfurkandemir.com/user/y3JmaK8utbDV8BNzCWvjI5SWPtZnQgug3u7YthqvZoA](https://spotify.ahmetfurkandemir.com/user/y3JmaK8utbDV8BNzCWvjI5SWPtZnQgug3u7YthqvZoA)
+
+[](https://github.com/AhmetFurkanDEMIR/SpotifyView/assets/54184905/ac13ad1f-a55e-4a81-bac4-27f41230ca06)
