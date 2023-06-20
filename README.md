@@ -8,7 +8,7 @@ Since the application is in development mode, Spotify does not allow everyone to
 
 **Spotify API** 
 
-![](https://github.com/AhmetFurkanDEMIR/SpotifyView/assets/54184905/c4699c3f-0059-4afb-a37d-9a26837770a8)
+![SpotifyView](https://github.com/AhmetFurkanDEMIR/SpotifyView/assets/54184905/dcaad00f-ce07-496f-b03b-4bb5e6325e67)
 
 SpotifyAPI usage is carried out as above. After the verification process was completed, the project was built using the methods on the [SpotifyAPI Document](https://developer.spotify.com/documentation/web-api).
 
